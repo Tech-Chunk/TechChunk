@@ -1,60 +1,49 @@
 <script>
-    let menuOpen = false;
-  
-    function toggleMenu() {
-      menuOpen = !menuOpen;
-    }
-  </script>
-  
-  <style>
-    /* Default styles for the menu */
-    .navbar {
-      display: flex;
-      align-items: center;
-    }
-  
-    .menu {
-      display: flex;
-      list-style: none;
-    }
-  
-    .menu li {
-      margin-right: 20px;
-    }
-  
-    .menu li a {
-      text-decoration: none;
-    }
-  
-    /* Styles for mobile view */
-    @media only screen and (max-width: 768px) {
-      .hamburger-menu {
-        display: block;
-        cursor: pointer;
-      }
-  
-      .menu {
-        display: none;
-        flex-direction: column;
-      }
-  
-      .menu.active {
-        display: flex;
-      }
-    }
-  </style>
-  
-  <nav class="navbar">
-    <div class="hamburger-menu" on:click={toggleMenu}>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <ul class={menuOpen ? "menu active" : "menu"}>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  
+	import Hamburger from "hamburger-menu-svelte";
+	const menu_list = [
+		{ name: "Home", url: "./" },
+		{ name: "Github", url: "https://github.com/itsuki-guitar/hamburger-menu-svelte" },
+		{ name: "Svelte top", url: "https://svelte.dev/" },
+		{ name: "npm", url: "https://www.npmjs.com/" }
+	];
+</script>
+
+<main>
+	<header>
+		<h1>Example</h1>
+		<Hamburger {menu_list}/>
+	</header>
+	<p>This is an example of humburger-menu-svelte.</p>
+</main>
+
+<style>
+	header {
+		height: 40px;
+		display: flex;
+		align-items: center;
+		padding:10px 20px;
+	}
+	p {
+		text-align: center;
+		color: var(--menuColor);
+	}
+
+	h1 {
+		font-size: 20px;
+		color: #DA0037;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+		}
+	}
+
+	@media (min-width: 768px) {
+		header {
+			justify-content: space-between;
+		}
+	}
+</style>
