@@ -2,6 +2,13 @@
     import { currentUser } from '$lib/code/pocketbase';
     import { applyAction, enhance } from '$app/forms';
     import { pb } from "$lib/code/pocketbase";
+    import HamburgerMenu from './hamburger.svelte';
+
+
+
+
+
+
     let isDropdownOpen = false 
 
     const handleDropdownClick = () => {
@@ -64,20 +71,13 @@
             {:else}
             <a class='login' href="/">Login</a>
             {/if}
-           
- 
        
+
+
+
         </li>
+        
     </ul>
-    <div  class="hamburger">
-
-
-        <span class='bar'>hamburg</span>
-        <span class='bar'></span>
-        <span class='bar'></span>
-
-
-    </div>
 
 </nav>
 
@@ -228,9 +228,21 @@ ul{
     @media (max-width: 480px) {
 
 
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
 
+        .nav {
+            display: none;
+        }
 
-
+        .logo {
+            display: none;
+        }
+        .login {
+            display: none;
+        }
     }
 
 </style>
