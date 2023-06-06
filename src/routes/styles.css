@@ -142,28 +142,12 @@ h3 {
     .Latestpost,.post2,.post3,.post4,.post5 {
 
         grid-column: 1/2;
-
-
-
-
 }
-
-
-
-
-
-
 
 
     .Latestpost {
         grid-column: span 2;
         grid-row: 1/2;
     }
-
-    .post2,
-    .post3,
-    .post4,
-    .post5 {
-        grid-column: span 1;
     }
 }
