@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: 300px 620px 620px 300px;
+    grid-template-rows: 500px 400px;
+    font-size: 16px;
+}
+
+.login {
+    grid-column: 2/4;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.button {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-color: white;
+    border-radius: 10px;
+}
