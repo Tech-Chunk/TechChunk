@@ -12,13 +12,15 @@
       if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return 
       isDropdownOpen = false
    }
+
+
 </script>
 
 <nav>
 
     <ul class='logo'>
         <li>
-            <a class="logo" href="/">Willy Chang.</a>
+            <a class="logo" href="/">TechChunk.</a>
         </li>
     </ul>
     <ul class='nav'>
@@ -67,13 +69,27 @@
        
         </li>
     </ul>
+    <div  class="hamburger">
 
+
+        <span class='bar'>hamburg</span>
+        <span class='bar'></span>
+        <span class='bar'></span>
+
+
+    </div>
 
 </nav>
 
 
 
 <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 nav {
     display: flex;
@@ -87,7 +103,19 @@ nav {
     gap: 15px;
  }
 
+.hamburger {
+    display: none;
+}
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
 
 .logo {
     background-color: #1E1E1E;
@@ -103,6 +131,13 @@ nav {
     text-align: center;
     border-radius: 20px;
 }
+
+
+
+.hamburger {
+    display: none;
+}
+
 
 .login {
     justify-content: center;
@@ -187,6 +222,15 @@ ul{
 
     .login {
         background-color: #1E1E1E;
+    }
+
+
+    @media (max-width: 480px) {
+
+
+
+
+
     }
 
 </style>
