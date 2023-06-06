@@ -1,9 +1,8 @@
-import * as universal from '../entries/pages/posts/_slug_/_page.ts.js';
+import * as server from '../entries/pages/logout/_page.server.ts.js';
 
 export const index = 6;
-export const component = async () => (await import('../entries/pages/posts/_slug_/_page.svelte.js')).default;
-export { universal };
-export const universal_id = "src/routes/posts/[slug]/+page.ts";
-export const imports = ["_app/immutable/nodes/6.afecabe9.js","_app/immutable/chunks/preload-helper.41c905a7.js","_app/immutable/chunks/control.e7f5239e.js","_app/immutable/chunks/index.b4b62c68.js","_app/immutable/chunks/utils.9a66bb98.js"];
-export const stylesheets = ["_app/immutable/assets/6.7e90170d.css"];
+export { server };
+export const server_id = "src/routes/logout/+page.server.ts";
+export const imports = [];
+export const stylesheets = [];
 export const fonts = [];

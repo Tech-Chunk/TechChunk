@@ -51,6 +51,10 @@ function escape(value, is_attr = false) {
   }
   return escaped + str.substring(last);
 }
+function escape_attribute_value(value) {
+  const should_escape = typeof value === "string" || value && typeof value === "object";
+  return should_escape ? escape(value, true) : value;
+}
 function each(items, fn) {
   let str = "";
   for (let i = 0; i < items.length; i += 1) {
@@ -112,14 +116,22 @@ function add_attribute(name, value, boolean) {
   const assignment = boolean && value === true ? "" : `="${escape(value, true)}"`;
   return ` ${name}${assignment}`;
 }
+function style_object_to_string(style_object) {
+  return Object.keys(style_object).filter((key) => style_object[key]).map((key) => `${key}: ${escape_attribute_value(style_object[key])};`).join(" ");
+}
+function add_styles(style_object) {
+  const styles = style_object_to_string(style_object);
+  return styles ? ` style="${styles}"` : "";
+}
 export {
   subscribe as a,
-  each as b,
+  add_styles as b,
   create_ssr_component as c,
-  add_attribute as d,
+  each as d,
   escape as e,
-  safe_not_equal as f,
+  add_attribute as f,
   getContext as g,
+  safe_not_equal as h,
   missing_component as m,
   noop as n,
   setContext as s,

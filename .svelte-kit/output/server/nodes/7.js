@@ -1,9 +1,9 @@
-import * as server from '../entries/pages/register/_page.server.ts.js';
+import * as universal from '../entries/pages/posts/_page.ts.js';
 
 export const index = 7;
-export const component = async () => (await import('../entries/pages/register/_page.svelte.js')).default;
-export { server };
-export const server_id = "src/routes/register/+page.server.ts";
-export const imports = ["_app/immutable/nodes/7.3395243f.js","_app/immutable/chunks/index.b4b62c68.js","_app/immutable/chunks/forms.36e5f795.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/chunks/singletons.f85dc50f.js","_app/immutable/chunks/index.d64fbed3.js","_app/immutable/chunks/pocketbase.ec0be321.js"];
-export const stylesheets = [];
+export const component = async () => (await import('../entries/pages/posts/_page.svelte.js')).default;
+export { universal };
+export const universal_id = "src/routes/posts/+page.ts";
+export const imports = ["_app/immutable/nodes/7.f0076545.js","_app/immutable/chunks/index.8aab6e09.js","_app/immutable/chunks/utils.9a66bb98.js"];
+export const stylesheets = ["_app/immutable/assets/7.776dcd50.css"];
 export const fonts = [];

@@ -8,6 +8,7 @@
 	"/api/posts": [
 		"src/routes/api/posts/+server.ts"
 	],
+	"/donations": [],
 	"/login": [
 		"src/routes/login/+page.server.ts"
 	],

@@ -18,12 +18,12 @@
 
     <ul class='logo'>
         <li>
-            <a class="logo" href="/">Tech Chunk.</a>
+            <a class="logo" href="/">Willy Chang.</a>
         </li>
     </ul>
     <ul class='nav'>
         <li>
-            <a href="/leaderboard">leaderboard</a>
+            <a href="/">leaderboard</a>
         </li>
 
         <li>
@@ -60,7 +60,7 @@
                     }}><input type = "submit" value="submit" class = "logout"> </form></li>
                 </ul>
             {:else}
-            <a class='login' href="#">Login</a>
+            <a class='login' href="/">Login</a>
             {/if}
            
  

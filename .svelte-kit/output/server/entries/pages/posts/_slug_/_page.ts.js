@@ -10,7 +10,7 @@ const __variableDynamicImportRuntimeHelper = (glob, path) => {
 };
 async function load({ params }) {
   try {
-    const post = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "../../../posts/first-post.md": () => import("../../../../chunks/first-post.js").then((n) => n._), "../../../posts/second-post.md": () => import("../../../../chunks/second-post.js").then((n) => n._), "../../../posts/third-post.md": () => import("../../../../chunks/third-post.js").then((n) => n._) }), `../../../posts/${params.slug}.md`);
+    const post = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "../../../posts/4th-post.md": () => import("../../../../chunks/4th-post.js").then((n) => n._), "../../../posts/5th-post.md": () => import("../../../../chunks/5th-post.js").then((n) => n._), "../../../posts/first-post.md": () => import("../../../../chunks/first-post.js").then((n) => n._), "../../../posts/second-post.md": () => import("../../../../chunks/second-post.js").then((n) => n._), "../../../posts/third-post.md": () => import("../../../../chunks/third-post.js").then((n) => n._) }), `../../../posts/${params.slug}.md`);
     return {
       content: post.default,
       meta: post.metadata

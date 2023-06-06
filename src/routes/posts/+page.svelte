@@ -11,7 +11,7 @@
     <section>
         <ul class="posts">
             {#each data.posts as post}
-			<a href={post.slug} class="post" style="background-image: url('{post.background}')">
+			<a href=/posts/{post.slug} class="post" style="background-image: url('{post.background}')">
                 <li class="post">
 					<div class="information" >
 						<a href=posts/{post.slug} class="title">{post.title}</a>

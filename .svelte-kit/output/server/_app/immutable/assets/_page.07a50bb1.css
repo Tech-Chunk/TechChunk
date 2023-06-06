@@ -1,0 +1,1 @@
+.grid{display:grid;grid-template-columns:300px 620px 620px 300px;grid-template-rows:500px 400px;align-items:center}.header{grid-column:2/4;grid-row:1/2}.likedpost{display:flex}
