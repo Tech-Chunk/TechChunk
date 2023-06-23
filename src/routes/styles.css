@@ -14,6 +14,7 @@ body {
     column-gap: 30px;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
 
 .Latestpost,
@@ -30,6 +31,7 @@ body {
     height: 100%;
     overflow: hidden;
     background-position: center;
+    margin: 0px;
 }
 
 .imageandinfowrapper {
@@ -48,7 +50,7 @@ body {
     font-weight: 300;
     background-size: cover;
     background-position: center;
-    margin: 50px;
+    margin: 0;
    
 }
 
@@ -123,33 +125,106 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+
     .main {
+        justify-content: center;
+        align-items: center;
         display: grid;
-        grid-template-columns: 100px 100px;
-        grid-template-rows: 500px 400px 400px;
+        grid-template-columns: 480px;
+        grid-template-rows: 400px 400px 400px 400px 400px;
         row-gap: 30px;
         column-gap: 30px;
         flex-direction: column;
         align-items: center;
+        margin: 0;
     }
+.Latestpost {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0;
+}
 
+.post2 {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.post3 {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.post4 {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.post5 {
+    grid-row: 5;
+    grid-column: 1;
+}
+
+.post6 {
+    grid-row: 6;
+    grid-column: 1;
+}
     .hamburger {
         display: block;
         cursor: pointer;
     }
 
-
-@media (max-width: 480px) {
-    .main {
-        display: grid;
-        grid-template-columns: 80%;
-        grid-template-rows: 285px 285px 285px 285px 285px;
-    }
-
-    .Latestpost,.post2,.post3,.post4,.post5 {
-
-        grid-column: 1/2;
+.information {
+    padding: 20px 35px;
 }
 
+
+
+@media (max-width: 500px) {
+    .main {
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 330px;
+        grid-template-rows: 250px 250px 250px 250px 250px;
+        row-gap: 30px;
+        column-gap: 30px;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
     }
+
+    .Latestpost, .post2, .post3, .post4, .post5 {
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    h2 {
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    h3 {
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+
+    .information {
+        padding: 10px 25px;
+    }
+
+
+}
+
 }

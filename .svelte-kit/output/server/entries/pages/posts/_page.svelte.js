@@ -1,4 +1,4 @@
-import { c as create_ssr_component, d as each, e as escape } from "../../../chunks/index3.js";
+import { c as create_ssr_component, b as each, e as escape } from "../../../chunks/index3.js";
 import { f as formatDate } from "../../../chunks/utils.js";
 const styles = ".posts{display:flex;flex-direction:column;gap:20px;text-decoration:none;text-align:center}.main{height:100%}.post{border-radius:30px;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0}a{background-size:cover;background-position:center}.information{display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:10px;width:100%}\n";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
