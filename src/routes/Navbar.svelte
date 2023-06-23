@@ -14,6 +14,20 @@
         if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
         isDropdownOpen = false;
     };
+
+    
+
+    let isHamburgerOpen = false;
+
+    const handleHamburgerClick = () => {
+        isHamburgerOpen = !isHamburgerOpen;
+        console.log("hamburger Clicked")
+    };
+
+    const handleHamburgerFocusLoss = ({ relatedTarget, currentTarget }) => {
+        if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
+        isHamburgerOpen = false;
+    };
 </script>
 
 <nav>
@@ -63,11 +77,27 @@
             {/if}
         </li>
     </ul>
-    <div class="hamburger">
+    <button class="hamburger" on:click={handleHamburgerClick}>
+    egg
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
-    </div>
+    </button>
+    <ul class="list" class:open={isHamburgerOpen}>
+<li>
+
+<button class="profile">Profile</button></li>
+    <li><button class="settings">Settings</button></li>
+    <li>
+        <form method="POST" action="/logout" use:enhance={() => {
+            return async ({ result }) => {
+                 await applyAction(result);
+                  pb.authStore.clear();
+                        };
+                    }}>
+                        <input type="submit" value="Logout" class="logout"/>
+                    </form>
+                </li>
 </nav>
 
 <style>
@@ -125,6 +155,7 @@
         align-items: center;
         text-align: center;
         border-radius: 20px;
+        display: none;
     }
 
     ul {
@@ -139,7 +170,7 @@
     }
 
     li a {
-        display: block;
+        display: none;
         color: white;
         text-align: center;
         padding: 14px 16px;
@@ -164,17 +195,19 @@
         height: 49px;
         width: 60px;
         text-align: center;
+        display: none;
     }
 
     .list {
         position: absolute;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         align-content: center;
         gap: 2px;
+
     }
 
     .profilebttn,

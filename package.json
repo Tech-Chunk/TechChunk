@@ -29,6 +29,6 @@
 	"dependencies": {
 		"hamburger-menu-svelte": "^2.2.0",
 		"mdsvex": "^0.10.6",
-		"pocketbase": "^0.15.0"
+		"pocketbase": "^0.15.2"
 	}
 }

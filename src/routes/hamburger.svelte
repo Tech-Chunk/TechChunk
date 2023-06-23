@@ -1,8 +1,12 @@
-<script >
+<script lang="ts">
+    import { applyAction, enhance } from '$app/forms';
+    import { pb } from "$lib/code/pocketbase";
+
     let isHamburgerOpen = false;
 
     const handleHamburgerClick = () => {
         isHamburgerOpen = !isHamburgerOpen;
+        console.log("hamburger Clicked")
     };
 
     const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
@@ -11,39 +15,37 @@
     };
 </script>
 
-<div class="menu-wrapper">
-    <div class="menu-overlay" class:open={isMenuOpen} on:click={toggleMenu}></div>
-    <div class="menu-content" class:open={isMenuOpen}>
-       <ul class='login'>
-        <li>
-            {#if $currentUser}
-            <ul class="list" class:open={isHamburgerOpen}>
+<div class="hamburger">
+    <button class="hamburger" on:click={handleHamburgerClick}>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+</div> 
+<ul class="list" class:open={isHamburgerOpen}>
+<li>
 
-                <li><button class="profile">Profile</button></li>
-                <li><button class="settings">Settings</button></li>
-                <li>
-                    <form method="POST" action="/logout" use:enhance={() => {
-                        return async ({ result }) => {
-                            await applyAction(result);
-                            pb.authStore.clear();
+<button class="profile">Profile</button></li>
+    <li><button class="settings">Settings</button></li>
+    <li>
+        <form method="POST" action="/logout" use:enhance={() => {
+            return async ({ result }) => {
+                 await applyAction(result);
+                  pb.authStore.clear();
                         };
                     }}>
                         <input type="submit" value="Logout" class="logout"/>
                     </form>
                 </li>
-            </ul>
-            {:else}
-            <a class='login' href="/">Login</a>
-            {/if}
-        </li>
-    </ul>
-    </div>
-    <div class="hamburger" on:click={handleHamburgerClick}>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-</div>
+
+
+
+
+
+
+
+</ul>
+
 
 <style>
     .menu-wrapper {

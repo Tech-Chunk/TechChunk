@@ -5,25 +5,25 @@
 	export let data
 	
 </script>
-  
+<body>
   <div class="main">
-	  {#each data.posts.slice(0, 1) as post}
-	  <a href = posts/{post.slug} class="Latestpost"  style="background-image: url('{post.background}')">
-		
+	{#each data.posts.slice(0, 1) as post}
+	<a href = posts/{post.slug} class="Latestpost"  style="background-image: url('{post.background}')">
+	  
 
-	    <div class="latestpost">
-		  <div class="information">
-		    <h2>{post.title}</h2>
-		    <div class="info">
-			  <h3 class="date">{formatDate(post.date)}</h3>
-			  <h3>{post.author}</h3>
-		    </div>
+	  <div class="latestpost">
+		<div class="information">
+		  <h2>{post.title}</h2>
+		  <div class="info">
+			<h3 class="date">{formatDate(post.date)}</h3>
+			<h3>{post.author}</h3>
 		  </div>
-		  </div>
+		</div>
+		</div>
 
-		
-	  </a>
-	  {/each}
+	  
+	</a>
+	{/each}
   
   	
 	{#each data.posts.slice(1, 2) as post}
@@ -109,7 +109,7 @@
 	<button class="readmore" >Read More</button>
 
 </div>
-
+</body>
 <style>
   
 
