@@ -11,14 +11,14 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
   $$result.css.add(css);
-  return `<div class="main">${each(data.posts.slice(0, 1), (post) => {
+  return `<body><div class="main">${each(data.posts.slice(0, 1), (post) => {
     return `<a href="${"posts/" + escape(post.slug, true)}" class="Latestpost" style="${"background-image: url('" + escape(post.background, true) + "')"}"><div class="latestpost"><div class="information"><h2>${escape(post.title)}</h2>
-		    <div class="info"><h3 class="date">${escape(formatDate(post.date))}</h3>
-			  <h3>${escape(post.author)}</h3></div>
-		  </div></div>
+		  <div class="info"><h3 class="date">${escape(formatDate(post.date))}</h3>
+			<h3>${escape(post.author)}</h3></div>
+		</div></div>
 
-		
-	  </a>`;
+	  
+	</a>`;
   })}
   
   	
@@ -62,9 +62,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 	</a>`;
   })}</div>
-<div class="footer svelte-rz3sn6"><button class="readmore svelte-rz3sn6">Read More</button>
-
-</div>`;
+<div class="footer svelte-rz3sn6"><button class="readmore svelte-rz3sn6">Read More</button></div>
+</body>`;
 });
 export {
   Page as default

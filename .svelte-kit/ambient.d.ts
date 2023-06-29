@@ -56,14 +56,12 @@ declare module '$env/static/private' {
 	export const npm_package_json: string;
 	export const NVM_INC: string;
 	export const CODESPACES: string;
-	export const rvm_stored_umask: string;
 	export const PIPX_BIN_DIR: string;
 	export const DYNAMIC_INSTALL_ROOT_DIR: string;
 	export const NVM_SYMLINK_CURRENT: string;
 	export const GRADLE_HOME: string;
 	export const ORYX_DIR: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
-	export const rvm_user_install_flag: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const MAVEN_HOME: string;
 	export const JUPYTERLAB_PATH: string;
@@ -107,7 +105,6 @@ declare module '$env/static/private' {
 	export const HUGO_DIR: string;
 	export const SHELL_LOGGED_IN: string;
 	export const MY_RUBY_HOME: string;
-	export const VSCODE_INJECTION: string;
 	export const LANG: string;
 	export const LS_COLORS: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
@@ -122,7 +119,6 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const npm_lifecycle_event: string;
 	export const rvm_prefix: string;
-	export const rvm_loaded_flag: string;
 	export const GEM_HOME: string;
 	export const LESSCLOSE: string;
 	export const ORYX_PREFER_USER_INSTALLED_SDKS: string;
@@ -131,7 +127,6 @@ declare module '$env/static/private' {
 	export const CONDA_DIR: string;
 	export const DEBIAN_FLAVOR: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-	export const VSCODE_NONCE: string;
 	export const npm_config_globalconfig: string;
 	export const npm_config_init_module: string;
 	export const JAVA_HOME: string;
@@ -216,14 +211,12 @@ declare module '$env/dynamic/private' {
 		npm_package_json: string;
 		NVM_INC: string;
 		CODESPACES: string;
-		rvm_stored_umask: string;
 		PIPX_BIN_DIR: string;
 		DYNAMIC_INSTALL_ROOT_DIR: string;
 		NVM_SYMLINK_CURRENT: string;
 		GRADLE_HOME: string;
 		ORYX_DIR: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
-		rvm_user_install_flag: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		MAVEN_HOME: string;
 		JUPYTERLAB_PATH: string;
@@ -267,7 +260,6 @@ declare module '$env/dynamic/private' {
 		HUGO_DIR: string;
 		SHELL_LOGGED_IN: string;
 		MY_RUBY_HOME: string;
-		VSCODE_INJECTION: string;
 		LANG: string;
 		LS_COLORS: string;
 		VSCODE_GIT_IPC_HANDLE: string;
@@ -282,7 +274,6 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		npm_lifecycle_event: string;
 		rvm_prefix: string;
-		rvm_loaded_flag: string;
 		GEM_HOME: string;
 		LESSCLOSE: string;
 		ORYX_PREFER_USER_INSTALLED_SDKS: string;
@@ -291,7 +282,6 @@ declare module '$env/dynamic/private' {
 		CONDA_DIR: string;
 		DEBIAN_FLAVOR: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
-		VSCODE_NONCE: string;
 		npm_config_globalconfig: string;
 		npm_config_init_module: string;
 		JAVA_HOME: string;

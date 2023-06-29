@@ -1,8 +1,8 @@
 <script>
+    import { onMount } from 'svelte';
     import { currentUser } from '$lib/code/pocketbase';
     import { applyAction, enhance } from '$app/forms';
     import { pb } from "$lib/code/pocketbase";
-    import HamburgerMenu from './hamburger.svelte';
 
     let isDropdownOpen = false;
 
@@ -14,6 +14,27 @@
         if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
         isDropdownOpen = false;
     };
+
+    let isMobileMenuOpen = false;
+
+    const handleMobileMenuToggle = () => {
+        isMobileMenuOpen = !isMobileMenuOpen;
+    };
+
+    // Close the mobile menu when a link is clicked
+    const closeMobileMenu = () => {
+        isMobileMenuOpen = false;
+    };
+
+    onMount(() => {
+        // Close the mobile menu when the window is resized
+        window.addEventListener('resize', closeMobileMenu);
+
+        return () => {
+            // Clean up the event listener when the component is unmounted
+            window.removeEventListener('resize', closeMobileMenu);
+        };
+    });
 </script>
 
 <nav>
@@ -22,15 +43,15 @@
             <a class="logo" href="/">TechChunk.</a>
         </li>
     </ul>
-    <ul class='nav'>
+    <ul class={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
         <li>
-            <a href="/">leaderboard</a>
+            <a href="/" on:click={closeMobileMenu}>leaderboard</a>
         </li>
         <li>
-            <a href="/about">About</a>
+            <a href="/about" on:click={closeMobileMenu}>About</a>
         </li>
         <li>
-            <a href="/donations">Donations</a>
+            <a href="/donations" on:click={closeMobileMenu}>Donations</a>
         </li>
     </ul>
     <ul class='login'>
@@ -43,8 +64,7 @@
                     <img class="close" src="/icons/profile.svg" alt="pfp"/>
                 {/if}
             </button>
-            <ul class="list" class:open={isDropdownOpen}>
-
+            <ul class={`list ${isDropdownOpen ? 'open' : ''}`} on:blur={handleDropdownFocusLoss}>
                 <li><button class="profile">Profile</button></li>
                 <li><button class="settings">Settings</button></li>
                 <li>
@@ -63,7 +83,7 @@
             {/if}
         </li>
     </ul>
-    <div class="hamburger">
+    <div class="hamburger" on:click={handleMobileMenuToggle}>
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -81,12 +101,10 @@
         display: flex;
         color: white;
         height: 50px;
-        flex-direction: row;
         justify-content: center;
         padding: 10px;
         align-items: center;
         font-size: 18px;
-        gap: 15px;
         margin: 20px;
     }
 
@@ -113,11 +131,13 @@
     }
 
     .nav {
+        display: flex;
         background-color: #1E1E1E;
         justify-content: center;
         align-items: center;
         text-align: center;
         border-radius: 20px;
+        margin-right: 15px;
     }
 
     .login {
@@ -135,7 +155,7 @@
     }
 
     li {
-        float: left;
+        display: inline-block;
     }
 
     li a {
@@ -204,7 +224,7 @@
 
     @media (max-width: 480px) {
         .hamburger {
-            display: block;
+            display: flex;
         }
 
         .nav {
@@ -217,6 +237,29 @@
 
         .login {
             display: none;
+        }
+
+        .nav.open {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background-color: #1E1E1E;
+            border-radius: 20px;
+            padding: 10px;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .nav.open li {
+            display: block;
+        }
+
+        .nav.open a {
+            padding: 5px;
         }
     }
 </style>
