@@ -83,11 +83,11 @@
             {/if}
         </li>
     </ul>
-    <button class="hamburger" on:click={handleMobileMenuToggle}>
+    <div class="hamburger" on:click={handleMobileMenuToggle} role="button">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
-    </button>
+    </div>
 </nav>
 
 <style>
