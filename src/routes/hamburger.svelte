@@ -14,14 +14,15 @@
         isHamburgerOpen = false;
     };
 </script>
-
+<button class="hamburger" on:click={handleHamburgerClick}>
 <div class="hamburger">
-    <button class="hamburger" on:click={handleHamburgerClick}>
+    
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
+        </div> 
     </button>
-</div> 
+
 <ul class="list" class:open={isHamburgerOpen}>
 <li>
 
