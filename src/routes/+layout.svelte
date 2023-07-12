@@ -3,7 +3,6 @@
 	import './layout.css';
 	import { currentUser } from '$lib/code/pocketbase';
 	import Navbar from './Navbar.svelte';
-	import hamburger from './hamburger.svelte'
 </script>
 
 <div class="app">
