@@ -19,6 +19,8 @@
 
     const handleMobileMenuToggle = () => {
         isMobileMenuOpen = !isMobileMenuOpen;
+        console.log("clicked");
+    
     };
 
     // Close the mobile menu when a link is clicked
