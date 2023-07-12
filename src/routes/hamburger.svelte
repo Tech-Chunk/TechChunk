@@ -115,7 +115,7 @@
     }
 
     .hamburger {
-        display: flex;
+        display: column;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -129,6 +129,8 @@
         height: 3px;
         background-color: white;
         margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
     }
 
     @media (min-width: 481px) {
